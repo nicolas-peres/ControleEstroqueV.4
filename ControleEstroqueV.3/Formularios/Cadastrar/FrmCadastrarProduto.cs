@@ -36,7 +36,7 @@ namespace ControleEstroqueV._3.Formularios
         {
             ProdutoC p = new ProdutoC();
             p.Id = Convert.ToInt32(numId.Value);
-            p.Nome = comboNome.Text;
+            p.Nome = txtNome.Text;
             p.Descricao = txtDescricao.Text;
             p.Preco = txtPreco.Text;
 
@@ -50,7 +50,7 @@ namespace ControleEstroqueV._3.Formularios
         {
             txtPreco.Text = "";
             txtDescricao.Text = "";
-            comboNome.Text = "";
+            txtNome.Text = "";
             numQtd.Value = 0;
             numId.Value = 0;
         }

@@ -35,13 +35,13 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.dtGridProduto = new System.Windows.Forms.DataGridView();
             this.numQtd = new System.Windows.Forms.NumericUpDown();
-            this.comboNome = new System.Windows.Forms.ComboBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
@@ -106,15 +106,6 @@
             this.numQtd.Size = new System.Drawing.Size(120, 20);
             this.numQtd.TabIndex = 24;
             // 
-            // comboNome
-            // 
-            this.comboNome.FormattingEnabled = true;
-            this.comboNome.Location = new System.Drawing.Point(46, 138);
-            this.comboNome.Name = "comboNome";
-            this.comboNome.Size = new System.Drawing.Size(121, 21);
-            this.comboNome.TabIndex = 23;
-            this.comboNome.SelectedIndexChanged += new System.EventHandler(this.comboNome_SelectedIndexChanged);
-            // 
             // txtPreco
             // 
             this.txtPreco.Location = new System.Drawing.Point(46, 277);
@@ -165,11 +156,19 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Nome";
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(37, 138);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 31;
+            // 
             // FrmCadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.numId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExcluir);
@@ -177,7 +176,6 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dtGridProduto);
             this.Controls.Add(this.numQtd);
-            this.Controls.Add(this.comboNome);
             this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label4);
@@ -204,12 +202,12 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.DataGridView dtGridProduto;
         private System.Windows.Forms.NumericUpDown numQtd;
-        private System.Windows.Forms.ComboBox comboNome;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNome;
     }
 }

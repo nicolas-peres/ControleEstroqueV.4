@@ -67,7 +67,8 @@ namespace ControleEstroqueV._3
 
         private void btnFunci_Click(object sender, EventArgs e)
         {
-
+            PrincipalFunci pf = new PrincipalFunci();
+            pf.ShowDialog();   
         }
     }
     }

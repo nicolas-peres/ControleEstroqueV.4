@@ -161,7 +161,7 @@ namespace ControleEstroqueV._3.Formularios
                         if (leitor.Read())
                         {
 
-                            txtPreco.Text = leitor["Preco"].ToString();
+                            //txtPreco.Text = leitor["Preco"].ToString();
                         }
                     }
                 }
