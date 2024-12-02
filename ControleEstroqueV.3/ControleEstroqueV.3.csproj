@@ -140,10 +140,10 @@
     <Compile Include="Formularios\Cadastrar\FrmCadastrarUsuario.Designer.cs">
       <DependentUpon>FrmCadastrarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmCompra.cs">
+    <Compile Include="Formularios\Cadastrar\FrmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmCompra.Designer.cs">
+    <Compile Include="Formularios\Cadastrar\FrmCompra.Designer.cs">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
@@ -178,7 +178,7 @@
     <EmbeddedResource Include="Formularios\Cadastrar\FrmCadastrarUsuario.resx">
       <DependentUpon>FrmCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmCompra.resx">
+    <EmbeddedResource Include="Formularios\Cadastrar\FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">

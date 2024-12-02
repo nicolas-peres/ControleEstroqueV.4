@@ -117,7 +117,6 @@ namespace ControleEstroqueV._3.Dao
                 MySqlCommand comando = new MySqlCommand(query, Conexao);
 
                 comando.Parameters.Add(new MySqlParameter("@nome", p.Nome));
-                comando.Parameters.Add(new MySqlParameter("@descricao", p.Descricao));
                 comando.Parameters.Add(new MySqlParameter("@preco", decimal.Parse(p.Preco)));
 
                 comando.ExecuteNonQuery();

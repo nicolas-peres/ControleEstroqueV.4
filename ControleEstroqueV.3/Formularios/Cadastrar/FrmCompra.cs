@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
+
 namespace ControleEstroqueV._3.Formularios
 {
     public partial class FrmCompra : Form
@@ -108,6 +110,65 @@ namespace ControleEstroqueV._3.Formularios
             {
                 dgvProdutos.Rows.RemoveAt(dgvProdutos.SelectedRows[0].Index);
                 AtualizarTotal();
+            }
+        }
+
+        private void FrmCompra_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=controleestoque;Uid=root;Password=;"))
+                {
+                    conexao.Open();
+                    string query = "SELECT Id, Nome FROM Produtos";
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    Dictionary<int, string> produtos = new Dictionary<int, string>();
+
+                    while (leitor.Read())
+                    {
+                        produtos.Add(leitor.GetInt32("Id"), leitor.GetString("Nome"));
+                    }
+
+                    comboBoxProdutos.DataSource = new BindingSource(produtos, null);
+                    comboBoxProdutos.DisplayMember = "Value"; // Exibe o nome no ComboBox
+                    comboBoxProdutos.ValueMember = "Key";    // Usa o Id como valor interno
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar produtos: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBoxProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxProdutos.SelectedValue != null)
+            {
+                string produto = (string)comboBoxProdutos.SelectedValue;
+
+                try
+                {
+                    using (MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=controleestoque;Uid=root;Password=;"))
+                    {
+                        conexao.Open();
+                        string query = "SELECT Produto, Preco FROM produtos WHERE Produto = @produto";
+                        MySqlCommand comando = new MySqlCommand(query, conexao);
+                        comando.Parameters.AddWithValue("@produto", produto);
+
+                        MySqlDataReader leitor = comando.ExecuteReader();
+                        if (leitor.Read())
+                        {
+
+                            txtPreco.Text = leitor["Preco"].ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao carregar detalhes do produto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

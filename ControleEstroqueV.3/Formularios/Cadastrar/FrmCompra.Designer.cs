@@ -179,6 +179,7 @@
             this.comboBoxProdutos.Name = "comboBoxProdutos";
             this.comboBoxProdutos.Size = new System.Drawing.Size(121, 21);
             this.comboBoxProdutos.TabIndex = 12;
+            this.comboBoxProdutos.SelectedIndexChanged += new System.EventHandler(this.comboBoxProdutos_SelectedIndexChanged);
             // 
             // FrmCompra
             // 
@@ -197,6 +198,7 @@
             this.Controls.Add(this.comboBoxProdutos);
             this.Name = "FrmCompra";
             this.Text = "FrmCompra";
+            this.Load += new System.EventHandler(this.FrmCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumQtd)).EndInit();

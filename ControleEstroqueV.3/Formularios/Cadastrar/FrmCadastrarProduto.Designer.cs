@@ -186,6 +186,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCadastrarProduto";
             this.Text = "FrmCadastrarProduto";
+            this.Load += new System.EventHandler(this.FrmCadastrarProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).EndInit();

@@ -59,5 +59,10 @@ namespace ControleEstroqueV._3.Formularios
         {
 
         }
+
+        private void FrmCadastrarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
