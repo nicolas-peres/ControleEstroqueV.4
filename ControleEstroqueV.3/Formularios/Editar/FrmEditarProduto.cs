@@ -22,7 +22,7 @@ namespace ControleEstroqueV._3.Formularios.Editar
             comboNome.Text = produto.Nome;
             txtDescricao.Text = produto.Descricao;
 
-            txtpreco.Text = produto.Preco;
+            txtpreco.Text = produto.Preco.ToString();
             produto = null;
         }
 
@@ -33,7 +33,7 @@ namespace ControleEstroqueV._3.Formularios.Editar
             produto.Nome = comboNome.Text;
             produto.Descricao = txtDescricao.Text;
 
-            produto.Preco = txtpreco.Text;
+            produto.Preco = Convert.ToDecimal(txtpreco.Text);
 
             produto.Editar();
             produto = null;

@@ -35,15 +35,12 @@ namespace ControleEstroqueV._3.Formularios
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             ProdutoC p = new ProdutoC();
-            p.Id = Convert.ToInt32(numId.Value);
             p.Nome = txtNome.Text;
             p.Descricao = txtDescricao.Text;
-            p.Preco = txtPreco.Text;
-
-
-            dao.Inserir(p);
-            dtGridProduto.DataSource = dao.ObterProdutos();
-            LimparCampos();
+            p.Preco = Convert.ToDecimal(txtPreco.Text);
+            p.Inserir();
+            MessageBox.Show("Sucesso", "Cadastrado com sucesso");
+            Close();
         }
 
         private void LimparCampos()
@@ -55,12 +52,22 @@ namespace ControleEstroqueV._3.Formularios
             numId.Value = 0;
         }
 
-        private void comboNome_SelectedIndexChanged(object sender, EventArgs e)
+        private void FrmCadastrarProduto_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void FrmCadastrarProduto_Load(object sender, EventArgs e)
+        private void dtGridProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
 
         }

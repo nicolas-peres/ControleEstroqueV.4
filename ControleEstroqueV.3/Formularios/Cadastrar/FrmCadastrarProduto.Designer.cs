@@ -71,6 +71,7 @@
             this.btnExcluir.TabIndex = 28;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
@@ -80,6 +81,7 @@
             this.btnEditar.TabIndex = 27;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalvar
             // 
@@ -98,6 +100,7 @@
             this.dtGridProduto.Name = "dtGridProduto";
             this.dtGridProduto.Size = new System.Drawing.Size(534, 286);
             this.dtGridProduto.TabIndex = 25;
+            this.dtGridProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridProduto_CellContentClick);
             // 
             // numQtd
             // 
